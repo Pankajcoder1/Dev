@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import requests
 import time
 from openpyxl import Workbook
 import pandas as pd
@@ -28,10 +27,9 @@ def xcelSheet():
 
     wb = Workbook()
     sheet1 = wb.create_sheet(sheetName)
-    sheet1.cell(1, 1, 'Question Number')
-    sheet1.cell(1, 2, 'Question Name')
-    sheet1.cell(1, 3, 'Question URL')
-    sheet1.cell(1, 4, 'Question Difficulty')
+    sheet1.cell(1, 1, 'Question Name')
+    sheet1.cell(1, 2, 'Question URL')
+    sheet1.cell(1, 3, 'Question Difficulty')
 
     for i in range(0, df.__len__()):
         sheet1.cell(i + 2, 1, df['Question Name'][i])
@@ -143,7 +141,7 @@ def getData():
             return
 
     except Exception as e:
-        print("Some error osccured, error: ", e)
+        print("Some error occured, error: ", e)
         return
 
 
